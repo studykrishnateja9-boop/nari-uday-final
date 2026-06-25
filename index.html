@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>Live · 12,840 children in school today</span>
+            </div>
+            <h1>Weaving rural potential into <span>national prosperity</span>.</h1>
+            <p class="bn">গ্রামীণ নারীদের ঘরে বসে উপার্জন এবং শিশুদের স্কুলে রাখার জন্য একটি এআই-চালিত প্ল্যাটফর্ম।</p>
+            <p class="desc">An AI ecosystem for rural Bangladesh: skill training, jobs, micro-business and child education tracking — in one app, in Bangla, offline-friendly.</p>
+            <div class="hero-actions">
+                <a href="/signup" class="btn btn-primary btn-large">Empower a village <i data-lucide="arrow-right"></i></a>
+                <a href="/impact" class="btn btn-large" style="border: 1px solid var(--border)">View impact report</a>
+            </div>
+            <div class="hero-features">
+                <span><i data-lucide="languages"></i> Bangla + English</span>
+                <span><i data-lucide="wifi-off"></i> Low-bandwidth · SMS fallback</span>
+                <span><i data-lucide="shield-check"></i> Govt + NGO data-shared</span>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="glass-card" style="padding: 2rem; border-radius: 1.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
+                <p class="eyebrow">Regional hubs · Live</p>
+                <div style="height: 300px; background: #f0f0f0; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 1.5rem 0;">
+                    <p style="color: #888;">[Bangladesh Map Visualization]</p>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; border-top: 1px solid var(--border); pt: 1rem;">
+                    <div>
+                        <p class="eyebrow">Active learners</p>
+                        <p style="font-family: var(--font-display); font-size: 1.5rem;">8,421</p>
+                    </div>
+                    <div>
+                        <p class="eyebrow">Weekly earnings</p>
+                        <p style="font-family: var(--font-display); font-size: 1.5rem; color: var(--accent);">৳ 42.5M</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="live-stats">
+    <div class="container stats-grid">
+        {% for stat in stats %}
+        <div class="stat-item">
+            <h3>{{ stat.value }}</h3>
+            <p>{{ stat.label }}</p>
+            <span>{{ stat.sub }}</span>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="problem">
+    <div class="container problem-grid">
+        <div class="problem-content">
+            <p class="eyebrow">The Problem</p>
+            <h2 class="section-title">When mothers can't earn, children pay — with their education.</h2>
+            <p style="color: var(--muted-foreground); margin-bottom: 2rem;">
+                Only 36% of rural Bangladeshi women participate in the labor force (World Bank, 2023). 
+                When household income collapses, an estimated 1.07 million children aged 5–17 enter labor instead of school (BBS & ILO survey). The cycle is structural — and solvable.
+            </p>
+            <a href="/problem" class="btn btn-ghost" style="color: var(--accent); padding-left: 0;">Read the full analysis <i data-lucide="arrow-right"></i></a>
+        </div>
+        <div class="problem-stats">
+            {% for stat in problem_stats %}
+            <div class="stat-card">
+                <h4>{{ stat.value }}</h4>
+                <p>{{ stat.label }}</p>
+                <p class="source">{{ stat.source }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section style="background: var(--primary); color: white; padding: 6rem 0;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+            <div>
+                <p class="eyebrow" style="color: var(--accent);">The Ecosystem</p>
+                <h2 class="section-title" style="max-width: 30rem;">One platform. Six interlocked steps. <span style="font-style: italic;">A single thread.</span></h2>
+            </div>
+            <a href="/how-it-works" style="color: white; text-decoration: underline;">See full flow →</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: var(--accent); margin-bottom: 1rem;">01</p>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;">Women</h3>
+                <p style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">Register via phone, voice or NGO field agent. Bangla-first.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: var(--accent); margin-bottom: 1rem;">02</p>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;">AI Skill Training</h3>
+                <p style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">Voice-led courses in tailoring, food, digital, AI basics.</p>
+            </div>
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: var(--accent); margin-bottom: 1rem;">03</p>
+                <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;">Jobs</h3>
+                <p style="font-size: 0.875rem; color: rgba(255,255,255,0.7);">AI matches remote, gig, NGO and govt project work.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="padding: 6rem 0;">
+    <div class="container">
+        <p class="eyebrow">Success Stories</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            {% for story in stories %}
+            <div style="padding: 2rem; border: 1px solid var(--border); border-radius: 1.5rem;">
+                <p style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem;">"{{ story.quote }}"</p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 3rem; height: 3rem; background: var(--muted); border-radius: 50%;"></div>
+                    <div>
+                        <p style="font-weight: 600;">{{ story.name }}</p>
+                        <p style="font-size: 0.75rem; color: var(--muted-foreground);">{{ story.role }} · {{ story.district }}</p>
+                    </div>
+                </div>
+                <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                    <p style="color: var(--accent); font-weight: 600; font-size: 0.875rem;">{{ story.metric }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section style="padding: 4rem 0; border-top: 1px solid var(--border);">
+    <div class="container">
+        <p class="eyebrow" style="text-align: center; margin-bottom: 2rem;">Our Partners</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; opacity: 0.5;">
+            {% for partner in partners %}
+            <span style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600;">{{ partner }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

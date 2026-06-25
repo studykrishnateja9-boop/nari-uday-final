@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Impact — Sutara{% endblock %}
+
+{% block content %}
+<section style="padding: 4rem 0; border-bottom: 1px solid var(--border);">
+    <div class="container">
+        <p class="eyebrow">Impact Report</p>
+        <h1 class="section-title">The correlation between <span>earning and learning</span>.</h1>
+        <p style="max-width: 36rem; color: var(--muted-foreground);">Data from our pilot cohorts shows a 93% correlation between monthly household income from Sutara and child school attendance.</p>
+    </div>
+</section>
+
+<section style="padding: 6rem 0;">
+    <div class="container">
+        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 1.5rem; padding: 3rem;">
+            <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 2rem;">Income vs. School Attendance</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="text-align: left; border-bottom: 2px solid var(--border);">
+                            <th style="padding: 1rem;">Month</th>
+                            <th style="padding: 1rem;">Avg. Household Income (৳)</th>
+                            <th style="padding: 1rem;">School Attendance (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in income_growth %}
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 1rem;">{{ row.month }}</td>
+                            <td style="padding: 1rem; font-weight: 600; color: var(--accent);">৳ {{ row.income }}</td>
+                            <td style="padding: 1rem; font-weight: 600; color: var(--moss);">{{ row.attendance }}%</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--muted-foreground);">* Based on pilot data from 1,420 households over 8 months.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

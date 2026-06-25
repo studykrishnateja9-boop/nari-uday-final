@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sutara — AI for rural women & children in Bangladesh{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo">Sutara</a>
+            <nav class="nav">
+                <a href="/training">Training</a>
+                <a href="/jobs">Jobs</a>
+                <a href="/impact">Impact</a>
+                <a href="/about">About</a>
+            </nav>
+            <div class="header-actions">
+                <a href="/login" class="btn btn-ghost">Login</a>
+                <a href="/signup" class="btn btn-primary">Join us</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="/" class="logo">Sutara</a>
+                <p>Weaving rural potential into national prosperity.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <a href="/training">Skill Training</a>
+                    <a href="/jobs">Jobs Marketplace</a>
+                    <a href="/business">Micro Business</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Impact</h4>
+                    <a href="/impact">Impact Report</a>
+                    <a href="/stories">Success Stories</a>
+                    <a href="/education">Child Education</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="/about">About Us</a>
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 Sutara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
